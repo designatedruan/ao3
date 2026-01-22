@@ -116,17 +116,11 @@
  If you don't have an account, you can <a href=https://archiveofourown.org/invite_requests>request an invitation to join</a>.
  </p>
 <div id="loginform">
-  <script type="text/javascript">
+ <script type="text/javascript">
     var submitted = false;
-    // iframe이 로드될 때 실행되는 함수
     function handleResponse() {
       if (submitted) {
-        // 성공 시 폼을 숨기고 메시지 출력
-        var formDiv = document.getElementById('loginform');
-        formDiv.innerHTML = '<div style="text-align:center; padding:20px; background:#eee; border-radius:5px;">' +
-                            '<h3 class="heading" style="color:#900;">제출이 완료되었습니다!</h3>' +
-                            '<p>감사합니다. 홈페이지로 돌아왔습니다.</p>' +
-                            '<button onclick="location.reload();" class="button">다시 작성</button></div>';
+        window.location.href = "https://archiveofourown.org/works/21065363";
       }
     }
   </script>
