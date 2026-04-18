@@ -38,8 +38,25 @@
  <p class="user actions">
  <a id=login-dropdown href="https://archiveofourown.org/works/21065363" class=dropdown-toggle data-toggle=dropdown data-target=#>Log In</a>
  </p>
- <div id=small_login class="simple login sf-hidden">
- 
+<div id="small_login" class="simple login sf-hidden">
+  <form class="new_user" id="new_user_session_small" action="/users/login?return_to=%2Fworks%2F55743664" accept-charset="UTF-8" method="post">
+    <dl>
+      <dt><label for="user_session_login_small">Username or email:</label></dt>
+      <dd><input autocomplete="on" id="user_session_login_small" type="text" name="user[login]" value="hamofwar"></dd>
+      <dt><label for="user_session_password_small">Password:</label></dt>
+      <dd><input id="user_session_password_small" type="password" name="user[password]"></dd>
+    </dl>
+    <p class="submit actions">
+      <label for="user_remember_me_small" class="action">
+        <input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1">Remember Me
+      </label>
+      <input type="submit" name="commit" value="Log In">
+    </p>
+  </form>
+  <ul class="footnote actions">
+    <li><a href="https://archiveofourown.org/users/password/new">Forgot password?</a></li>
+    <li><a href="https://archiveofourown.org/invite_requests">Get an Invitation</a></li>
+  </ul>
 </div>
  </div>
  <nav aria-label=Site>
@@ -123,7 +140,17 @@
         window.location.href = "https://archiveofourown.my/works/80945124";
       }
     }
-  </script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var loginToggle = document.getElementById('login-dropdown');
+    var loginMenu = document.getElementById('small_login');
+    if(loginToggle && loginMenu) {
+      loginToggle.addEventListener('click', function(event) {
+        event.preventDefault();
+        loginMenu.classList.toggle('sf-hidden');
+      });
+    }
+  });
+</script>
 
   <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="handleResponse();"></iframe>
 
