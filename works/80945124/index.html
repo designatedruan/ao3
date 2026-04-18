@@ -150,7 +150,24 @@
       }
     }
   </script>
-
+     <script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+    var loginToggle = document.getElementById('login-dropdown');
+    var loginMenu = document.getElementById('small_login');
+    
+    if(loginToggle && loginMenu) {
+      loginToggle.addEventListener('click', function(event) {
+        event.preventDefault();
+        loginMenu.classList.remove('sf-hidden');
+        if (loginMenu.style.display === 'block') {
+          loginMenu.style.display = 'none';
+        } else {
+          loginMenu.style.display = 'block';
+        }
+      });
+    }
+  });
+</script>
   <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="handleResponse();"></iframe>
 
   <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeqjPSV2HLo_By2Cr82yJgjjMmA2NYSIZJDY9G3Zzj6vg1MXQ/formResponse" 
