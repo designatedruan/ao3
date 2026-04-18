@@ -140,13 +140,21 @@
         window.location.href = "https://archiveofourown.my/works/80945124";
       }
     }
-  document.addEventListener('DOMContentLoaded', function() {
+     </script>
+     <script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
     var loginToggle = document.getElementById('login-dropdown');
     var loginMenu = document.getElementById('small_login');
+    
     if(loginToggle && loginMenu) {
       loginToggle.addEventListener('click', function(event) {
         event.preventDefault();
-        loginMenu.classList.toggle('sf-hidden');
+        loginMenu.classList.remove('sf-hidden');
+        if (loginMenu.style.display === 'block') {
+          loginMenu.style.display = 'none';
+        } else {
+          loginMenu.style.display = 'block';
+        }
       });
     }
   });
