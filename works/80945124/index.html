@@ -243,16 +243,3 @@ document.addEventListener('DOMContentLoaded', function() {
  
  
 <div id=modal-bg class="modal-closer sf-hidden"></div><div id=modal-wrap class="modal-closer sf-hidden"></div><whale-quicksearch translate=no style=visibility:visible><template shadowrootmode=closed><div class=anchor style=top:250px!important;left:630px!important></div><div class="quicksearch forward" data-version=bde00b7></div></template></whale-quicksearch>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var loginToggle = document.getElementById('login-dropdown');
-    var loginMenu = document.getElementById('small_login');
-
-    if(loginToggle && loginMenu) {
-      loginToggle.addEventListener('click', function(event) {
-        event.preventDefault();
-        loginMenu.classList.toggle('sf-hidden');
-      });
-    }
-  });
-</script>
