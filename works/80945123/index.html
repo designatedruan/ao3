@@ -38,87 +38,35 @@
  <p class="user actions">
  <a id=login-dropdown class=dropdown-toggle data-toggle=dropdown data-target=#>Log In</a>
  </p>
-<div id="small_login" class="simple login sf-hidden">
+<div id="small_login" class="simple login sf-hidden" style="padding: 15px; padding-bottom: 20px; box-sizing: border-box;">
   <form class="new_user" id="new_user_session_small" action="/users/login?return_to=%2Fworks%2F55743664" accept-charset="UTF-8" method="post">
-    <dl>
-      <dt><label for="user_session_login_small">Username or email:</label></dt>
-      <dd><input autocomplete="on" id="user_session_login_small" type="text" name="user[login]" value=""></dd>
-      <dt><label for="user_session_password_small">Password:</label></dt>
-      <dd><input id="user_session_password_small" type="password" name="user[password]"></dd>
-    </dl>
-    <p class="submit actions">
-      <label for="user_remember_me_small" class="action">
-        <input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1">Remember Me
+    
+    <div style="margin-bottom: 10px;">
+      <label for="user_session_login_small" style="display: block; margin-bottom: 5px; font-weight: bold;">Username or email:</label>
+      <input autocomplete="on" id="user_session_login_small" type="text" name="user[login]" value="hamofwar" style="box-sizing: border-box; width: 100%; padding: 5px;">
+    </div>
+    
+    <div style="margin-bottom: 10px;">
+      <label for="user_session_password_small" style="display: block; margin-bottom: 5px; font-weight: bold;">Password:</label>
+      <input id="user_session_password_small" type="password" name="user[password]" style="box-sizing: border-box; width: 100%; padding: 5px;">
+    </div>
+    
+    <div class="submit actions" style="float: none; text-align: center; margin-top: 15px;">
+      <label for="user_remember_me_small" class="action" style="margin-right: 10px;">
+        <input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"> Remember Me
       </label>
-      <input type="submit" name="commit" value="Log In">
-    </p>
+      <input type="submit" name="commit" value="Log In" style="cursor: pointer;">
+    </div>
+    
   </form>
-  <ul class="footnote actions">
-    <li><a href="https://archiveofourown.org/users/password/new">Forgot password?</a></li>
-    <li><a href="https://archiveofourown.org/invite_requests">Get an Invitation</a></li>
+  
+  <ul class="footnote actions" style="float: none; text-align: center; margin-top: 15px; padding: 0;">
+    <li style="display: inline; margin-right: 10px;"><a href="https://archiveofourown.org/users/password/new">Forgot password?</a></li>
+    <li style="display: inline;"><a href="https://archiveofourown.org/invite_requests">Get an Invitation</a></li>
   </ul>
+  
+  <div class="clear"></div>
 </div>
- </div>
- <nav aria-label=Site>
- <ul class="primary navigation actions">
- <li class=dropdown aria-haspopup=true>
- <a href=https://archiveofourown.org/menu/fandoms class=dropdown-toggle data-toggle=dropdown data-target=#>Fandoms</a>
- <ul class="menu dropdown-menu sf-hidden">
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-</ul>
- </li>
- <li class=dropdown aria-haspopup=true>
- <a href=https://archiveofourown.org/menu/browse class=dropdown-toggle data-toggle=dropdown data-target=#>Browse</a>
- <ul class="menu dropdown-menu sf-hidden">
- 
- 
- 
- 
-</ul>
- </li>
- <li class=dropdown aria-haspopup=true>
- <a href=https://archiveofourown.org/menu/search class=dropdown-toggle data-toggle=dropdown data-target=#>Search</a>
- <ul class="menu dropdown-menu sf-hidden">
- 
- 
- 
- 
-</ul>
- </li>
- <li class=dropdown aria-haspopup=true>
- <a href=https://archiveofourown.org/menu/about class=dropdown-toggle data-toggle=dropdown data-target=#>About</a>
- <ul class="menu dropdown-menu sf-hidden">
- 
- 
- 
- 
- 
-</ul>
- </li>
- <li class=search><form class=search id=search role=search aria-label=Work action=/works/search accept-charset=UTF-8>
- <fieldset>
- <p>
- <label class="landmark sf-hidden" for=site_search>Work Search</label>
- <input class=text id=site_search aria-describedby=site_search_tooltip type=text name=work_search[query] value>
- <span class=tip role=tooltip id=site_search_tooltip>tip: katekyou "alternate universe" sort:&gt;words</span>
- <span class="submit actions"><input type=submit value=Search class=button></span>
- </p>
- </fieldset>
-</form></li>
- </ul>
- </nav>
- <div class=clear></div>
 </header>
  <div id=inner class=wrapper>
  
