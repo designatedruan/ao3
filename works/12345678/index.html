@@ -200,9 +200,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
       submitting = true;
 
-      loading.style.display = 'block';
-startLoadingFavicon();
-        
+      loading.style.display = 'flex';
+
       document.querySelectorAll(
         '.puzzle-form input[type="submit"]'
       ).forEach(function (button) {
@@ -280,7 +279,6 @@ startLoadingFavicon();
           'SheetDB submission failed:',
           error
         );
-            stopLoadingFavicon();
         window.location.href =
           ERROR_PAGE_URL;
 
@@ -291,74 +289,6 @@ startLoadingFavicon();
   });
 
 });
-let faviconTimer = null;
-let faviconAngle = 0;
-let originalFavicon = null;
-
-function startLoadingFavicon() {
-  let favicon =
-    document.querySelector('link[rel~="icon"]') ||
-    document.querySelector('link[rel="shortcut icon"]');
-
-  if (!favicon) {
-    favicon = document.createElement('link');
-    favicon.rel = 'icon';
-    document.head.appendChild(favicon);
-  }
-
-  originalFavicon = favicon.href;
-
-  const canvas = document.createElement('canvas');
-  canvas.width = 32;
-  canvas.height = 32;
-
-  const ctx = canvas.getContext('2d');
-
-  faviconTimer = setInterval(function () {
-    ctx.clearRect(0, 0, 32, 32);
-
-    ctx.save();
-    ctx.translate(16, 16);
-    ctx.rotate(faviconAngle);
-
-    ctx.beginPath();
-    ctx.arc(
-      0,
-      0,
-      10,
-      0,
-      Math.PI * 1.45
-    );
-
-    ctx.lineWidth = 4;
-    ctx.strokeStyle = '#777';
-    ctx.lineCap = 'round';
-    ctx.stroke();
-
-    ctx.restore();
-
-    favicon.href = canvas.toDataURL('image/png');
-
-    faviconAngle += 0.35;
-
-  }, 80);
-}
-
-
-function stopLoadingFavicon() {
-  if (faviconTimer) {
-    clearInterval(faviconTimer);
-    faviconTimer = null;
-  }
-
-  const favicon =
-    document.querySelector('link[rel~="icon"]') ||
-    document.querySelector('link[rel="shortcut icon"]');
-
-  if (favicon && originalFavicon) {
-    favicon.href = originalFavicon;
-  }
-    
 </script>
      <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
@@ -451,13 +381,35 @@ document.addEventListener('DOMContentLoaded', function() {
  </ul>
 </div>
  
- <div id="submit-loading"></div>
+ <div id="submit-loading">
+  <div class="loading-spinner"></div>
+</div>
    <style> #submit-loading {
   display: none;
   position: fixed;
   inset: 0;
   z-index: 99999;
   background: #fff;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-spinner {
+  width: 28px;
+  height: 28px;
+
+  border: 3px solid #ddd;
+  border-top-color: #777;
+  border-radius: 50%;
+
+  animation: loading-spin 0.8s linear infinite;
+}
+
+@keyframes loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }</style>
  
 <div id=modal-bg class="modal-closer sf-hidden"></div><div id=modal-wrap class="modal-closer sf-hidden"></div>
