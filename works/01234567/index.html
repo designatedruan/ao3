@@ -200,7 +200,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
       submitting = true;
 
-      loading.style.display = 'block';
+      document.body.classList.add('is-submitting');
+      loading.style.display = 'flex';
 
       document.querySelectorAll(
         '.puzzle-form input[type="submit"]'
@@ -381,13 +382,43 @@ document.addEventListener('DOMContentLoaded', function() {
  </ul>
 </div>
  
- <div id="submit-loading"></div>
-   <style> #submit-loading {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-  background: #fff;
-}</style>
+ <div id="submit-loading">
+   <div class="loading-spinner" aria-hidden="true"></div>
+ </div>
+ <style>
+ #header {
+   position: relative;
+   z-index: 100000;
+ }
+
+ #submit-loading {
+   display: none;
+   position: fixed;
+   inset: 0;
+   z-index: 99999;
+   background: #fff;
+   align-items: center;
+   justify-content: center;
+ }
+
+ .loading-spinner {
+   width: 20px;
+   height: 20px;
+   border: 2px solid #ddd;
+   border-top-color: #888;
+   border-radius: 50%;
+   animation: loading-spin 0.7s linear infinite;
+ }
+
+ @keyframes loading-spin {
+   to {
+     transform: rotate(360deg);
+   }
+ }
+
+ body.is-submitting #header {
+   pointer-events: none;
+ }
+ </style>
  
 <div id=modal-bg class="modal-closer sf-hidden"></div><div id=modal-wrap class="modal-closer sf-hidden"></div>
