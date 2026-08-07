@@ -253,18 +253,27 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
 
-        const result = await response.json();
+       const result = await response.json();
 
-        if (
-          response.status === 201 &&
-          result.created === 1
-        ) {
+if (
+  response.status === 201 &&
+  result.created === 1
+) {
 
-          window.location.href =
-            NEXT_PAGE_URL;
+  if (answer2.length >= 8) {
 
-          return;
-        }
+    window.location.href =
+      NEXT_PAGE_URL;
+
+  } else {
+
+    window.location.href =
+      ERROR_PAGE_URL;
+
+  }
+
+  return;
+}
 
 
         throw new Error(
