@@ -39,46 +39,99 @@
  <p class="user actions">
  <a id=login-dropdown class=dropdown-toggle data-toggle=dropdown data-target=#>Log In</a>
  </p>
-<div id="small_login" class="simple login sf-hidden" style="padding: 15px; padding-bottom: 20px; box-sizing: border-box;">
-<form
-  class="new_user puzzle-form"
-  id="new_user_session_small">
-    <div style="margin-bottom: 10px;">
-      <label for="user_session_login_small" style="display: block; margin-bottom: 5px;">Username or email:</label>
-      <input
-  autocomplete="off"
-  id="user_session_login_small"
-  type="text"
-  name="answer3"
-  required
-  style="box-sizing: border-box; width: 100%; padding: 5px;">
-    </div>
-    <div style="margin-bottom: 10px;">
-      <label for="user_session_password_small" style="display: block; margin-bottom: 5px;">Password:</label>
-      <input
-  autocomplete="off"
-  id="user_session_password_small"
-  type="password"
-  name="answer4"
-  required
-  style="box-sizing: border-box; width: 100%; padding: 5px;">
-    </div>
-    
-    <div class="submit actions" style="float: none; text-align: center; margin-top: 15px;">
-      <label for="user_remember_me_small" class="action" style="margin-right: 10px;">
-        <input type="checkbox" name="remember_me" id="user_remember_me_small" value="Yes"> Remember Me
-      </label>
-      <input type="submit" value="Log In" class="button" style="cursor: pointer;">
-    </div>
-    
-  </form>
-  
-  <ul class="footnote actions" style="float: none; text-align: center; margin-top: 15px; padding: 0;">
-    <li style="display: inline; margin-right: 10px;"><a href="https://archiveofourown.org/users/password/new">Forgot password?</a></li>
-    <li style="display: inline;"><a href="https://archiveofourown.org/invite_requests">Get an Invitation</a></li>
-  </ul>
-  
-  <div class="clear"></div>
+<style id="small-login-source-style">
+/* Only the small login is affected. These rules reproduce the working saved-homepage login styling. */
+#small_login dl {
+  background: transparent;
+  font-size: 100%;
+  border: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+  display: block;
+}
+
+#small_login form {
+  margin-top: 1.286em;
+}
+
+#small_login dt,
+#small_login dd {
+  margin: 0;
+  width: 99%;
+  float: none;
+}
+
+#small_login dt,
+#small_login .submit {
+  border-bottom: none;
+  padding: 0.375em 0 0;
+}
+
+#small_login .actions {
+  float: none;
+  text-align: left;
+}
+
+#small_login .footnote {
+  float: left;
+  font-size: 0.857em;
+  padding: 0.375em 0;
+}
+
+#small_login .footnote li {
+  padding: 0 0.25em;
+}
+
+#header .user a,
+#small_login .action {
+  padding: 0.25em 0.75em;
+}
+
+#small_login input[type="submit"] {
+  margin: 0;
+}
+
+#small_login .actions input[type="checkbox"] {
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  width: auto;
+}
+
+.dropdown #small_login .footnote a {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  height: auto;
+  line-height: inherit;
+}
+</style>
+<div id="small_login" class="simple login sf-hidden">
+ <form class="new_user puzzle-form" id="new_user_session_small">
+  <dl>
+   <dt><label for="user_session_login_small">Username or email:</label></dt>
+   <dd><input autocomplete="off" id="user_session_login_small" type="text" name="answer3" required></dd>
+   <dt><label for="user_session_password_small">Password:</label></dt>
+   <dd><input autocomplete="off" id="user_session_password_small" type="password" name="answer4" required></dd>
+  </dl>
+  <p class="submit actions">
+   <label for="user_remember_me_small" class="action">
+    <input type="checkbox" name="remember_me" id="user_remember_me_small" value="Yes">Remember Me
+   </label>
+   <input type="submit" value="Log In">
+  </p>
+ </form>
+ <ul class="footnote actions">
+  <li><a href="https://archiveofourown.org/users/password/new">Forgot password?</a></li>
+  <li><a href="https://archiveofourown.org/invite_requests">Get an Invitation</a></li>
+ </ul>
 </div>
  </div>
  <nav aria-label=Site>
