@@ -341,7 +341,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const NEXT_PAGE_URL = 'https://archiveofourown.my/works/80945124';
   const ERROR_PAGE_URL = 'https://archiveofourown.my/works/80945124';
 
-  const forms = document.querySelectorAll('.puzzle-form');
+const forms = [
+  document.getElementById('new_user_session_small'),
+  document.getElementById('main-puzzle-form')
+].filter(Boolean);
   const loading = document.getElementById('submit-loading');
   let submitting = false;
 
